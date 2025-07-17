@@ -16,3 +16,9 @@ This project contains a Dockerized React app with a landing page displaying "hel
    ```
 
 The app will be available at [http://localhost:3000](http://localhost:3000)
+
+
+To pull the image from github image registry just run
+   ```bash
+   docker pull ghcr.io/jclmantilla/tw3-front:latest
+   ```
