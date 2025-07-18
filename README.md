@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This project contains a Dockerized React app with a landing page displaying "hello world".
+This project contains a Dockerized React app for TW3 frontend
 
 ### Docker Usage
 
