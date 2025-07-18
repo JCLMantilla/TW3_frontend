@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_TW3_BACKEND_HOST: ${VITE_TW3_BACKEND_HOST:-localhost}
+        VITE_TW3_BACKEND_PORT: ${VITE_TW3_BACKEND_PORT:-270}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+networks:
+  default:
+    name: my_network
+    external: False
+    
